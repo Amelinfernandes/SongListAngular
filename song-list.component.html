@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="song-list.component.css">
+<main>
+
+    <!--start hero area-->
+    <div class="hero-area text-white pt-5 mt-2">
+        
+        <div class="nav-spacer"></div>
+
+        <ul class="hero-nav nav m-4 nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="text-white nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Featured</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="text-white nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Trending</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="text-white nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">New Release</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent" *ngFor="let item of list">
+          <div class="tab-pane fade show active" id="{{item.target}}" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+
+                  <!--small song item-->
+                  <div class="song-small m-1 ms-4 col-md-6 row align-items-center">
+                      <div class="col-1 h3">{{item.number}}</div>
+                      <div class="col d-flex">
+                          <img class="song-small-img rounded m-1" src="{{item.image}}" >
+                          <div class="ms-1">
+                              <div>{{item.name}}</div>
+                              <small>{{item.description}}</small>
+                          </div>
+                      </div>
+                      <div class="col-2">{{item.duration}} <i class="fa-solid fa-play" style="margin-left: 5px;"></i></div>
+                  </div>
+                  <!--end small song item-->
+
+          </div>
+        </div>
+
+
+    </div>
+    <!--end hero area-->
+    
+</main><!--end main area-->
